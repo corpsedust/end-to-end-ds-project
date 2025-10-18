@@ -5,9 +5,9 @@ with open("README.md", "r", encoding = "utf-8") as f:
     
 __version__ = "0.0.1"
     
-repo_name= "End to end DS project with DVC & ML Flow"
+repo_name= "end-to-end-ds-project"
 author_user_name = "corpsedust"
-src_repo = "end-to-end-ds-project"
+src_repo = "ds_project"
 author_email = "enivet0@gmail.com"
 
 
