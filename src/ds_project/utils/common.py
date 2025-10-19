@@ -81,3 +81,18 @@ def get_size(path:Path) -> str:
     """
     size_in_kb = round(os.path.getsize(path)/1024)
     return f"~ {size_in_kb} KB"
+
+
+# ConfigBox allows accessing YAML properties using dot notation.
+# Example: d = {"key": "value", "key2": "value2"}
+# Normally, you'd access values with d["key"], since d.key would fail.
+# Using ConfigBox, you can use d.key instead for easier access to YAML data.
+
+# @ensure_annotations validates that the types of function arguments
+# match their defined type annotations.
+# Example:
+# def get_nums(x: int, y: int) -> int:
+#     return x * y
+# Without @ensure_annotations, passing a string or float for y 
+# would not raise an error
+# and could produce unintended results.
