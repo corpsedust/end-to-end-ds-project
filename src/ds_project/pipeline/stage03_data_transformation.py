@@ -1,6 +1,7 @@
 from ds_project.config.configuration import ConfigurationManager
 from ds_project.components.data_transformation import DataTransormation
 from ds_project import logger
+from pathlib import Path
 
 STAGE_NAME = "Data Transformation stage"
 

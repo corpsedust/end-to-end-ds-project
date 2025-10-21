@@ -52,5 +52,5 @@ except Exception as e:
     logger.excetpion(e)
     raise e
 
-#why are we again using try, catch block here when we have 
-#already defined the shit in stage02 under __name__ = "__main__"
+# why are we again using try, catch block here when we have 
+# already defined the shit in stage02 under __name__ = "__main__"
