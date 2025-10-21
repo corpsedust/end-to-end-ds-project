@@ -1,4 +1,4 @@
-from ds_project.config.configuration import ConfigurationManagewr
+from ds_project.config.configuration import ConfigurationManager
 from ds_project.components.data_ingestion import DataIngestion
 from ds_project import logger
 
@@ -11,7 +11,7 @@ class DataIngestionTrainigPipeline:
         pass
     
     def main(self):
-        config = ConfigurationManagewr()
+        config = ConfigurationManager()
         data_ingestion_config = config.get_data_ingestion_config()
         data_ingestion = DataIngestion(config = data_ingestion_config)
         data_ingestion.download_file()
