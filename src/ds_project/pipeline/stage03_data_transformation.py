@@ -1,0 +1,31 @@
+from ds_project.config.configuration import ConfigurationManager
+from ds_project.components.data_transformation import DataTransormation
+from ds_project import logger
+
+STAGE_NAME = "Data Transformation stage"
+
+
+class DataTransformationTrainingPipeline:
+    def __init__(self):
+        pass
+    
+    def main(self):
+        try:
+            config = ConfigurationManager()
+            data_transformation_config = config.get_data_transformation_config()
+            data_transformation = DataTransormation(config = data_transformation_config)
+            data_transformation.train_test_splitting()
+    
+        except Exception as e:
+            raise e
+
+
+if __name__ == "__main__":
+        try:
+            logger.info(f">>> stage {STAGE_NAME} started <<<")
+            obj = DataTransformationTrainingPipeline()
+            obj.main()
+            logger.info(f">>> stage {STAGE_NAME} completed <<<<")
+        except Exception as e:
+            logger.exception(e)
+            raise e
