@@ -1,6 +1,6 @@
 from ds_project.constants import *
 from ds_project.utils.common import read_yaml, create_directories
-from ds_project.entity.config_entity import DataIngestionConfig, DataValidationConfig
+from ds_project.entity.config_entity import DataIngestionConfig, DataValidationConfig, DatatransformationConfig
 
 
 class ConfigurationManager:
@@ -45,4 +45,15 @@ class ConfigurationManager:
         
         return data_validation_config
     
+    
+    def get_data_transformation_config(self) -> DatatransformationConfig:
+        config = self.config.data_transformation
+        
+        create_directories([config.root_dir])
+        
+        data_transformation_config = DatatransformationConfig(
+            root_dir = config.root_dir,
+            data_path = config.data_path
+        )
+        return data_transformation_config
     
